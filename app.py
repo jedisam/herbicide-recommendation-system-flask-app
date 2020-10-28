@@ -17,7 +17,9 @@ from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
 
 # Define a flask app
+from flask_cors import CORS
 app = Flask(__name__)
+CORS(app) # This will enable CORS for all routes
 
 # Model saved with Keras model.save()
 MODEL_PATH = 'models/model.h5'
