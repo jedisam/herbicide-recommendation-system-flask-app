@@ -2,6 +2,7 @@ from __future__ import division, print_function
 # coding=utf-8
 import sys
 import os
+import shutil
 import glob
 import re
 import numpy as np
@@ -88,6 +89,8 @@ def upload():
 
         # Make prediction
         preds = model_predict(file_path, model)
+        shutil.rmtree('./uploads/zz')
+        os.mkdir('./uploads/zz')
         
         # Process your result for human
         # pred_class = preds.argmax(axis=-1)            # Simple argmax
